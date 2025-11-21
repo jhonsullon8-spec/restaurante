@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle del Plato</title>
+  <link rel="stylesheet" href="/css/plato.css">
+</head>
+
+<body class="fondo-plato">
+
+  <div class="tarjeta-contenedor">
+    <div class="tarjeta-plato">
+      
+      <img id="plato-img" class="tarjeta-imagen" alt="Imagen del plato">
+
+      <h1 id="plato-nombre" class="tarjeta-nombre"></h1>
+
+      <p id="plato-precio" class="tarjeta-precio"></p>
+
+      <p id="plato-descripcion" class="tarjeta-descripcion"></p>
+
+      <a href="/menu" class="boton-volver">Volver al menú</a>
+    </div>
+  </div>
+
+  <script src="/js/plato.js"></script>
+    <script>
+      const container = document.getElementById("platos-container");
+  const platos = container.querySelectorAll(".plato-card");
+
+  if (platos.length === 1) {
+    container.classList.add("solo-uno");
+  }
+  </script>
+
+</body>
+</html>

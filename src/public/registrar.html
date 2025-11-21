@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Crear Cuenta - El Mérito</title>
+
+  <!-- 🎨 Estilos (misma ruta que login) -->
+  <link rel="stylesheet" href="/estiloadmincliente/login.css">
+
+  <!-- ✍️ Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Kaushan+Script&display=swap" rel="stylesheet">
+
+  <!-- 🌊 Librería GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+
+<body>
+  <!-- 🌊 Fondo decorativo -->
+  <div class="fondo">
+    <div class="ola ola1"></div>
+    <div class="ola ola2"></div>
+    <div class="ola ola3"></div>
+  </div>
+
+  <!-- 🔐 Formulario de registro -->
+  <div class="login-container">
+    <h2>🍋 Crear Cuenta</h2>
+    <p class="subtitulo">Regístrate para continuar</p>
+
+    <form id="form-registrar">
+      <input type="text" id="usuario" placeholder="Nuevo usuario" required>
+      <input type="password" id="password" placeholder="Contraseña" required>
+      <button type="submit">Registrarme</button>
+    </form>
+
+    <p id="msg"></p>
+    <a href="/login" class="btn-volver-inicio">← Ya tengo cuenta</a>
+  </div>
+
+  <!-- 🚀 Lógica JS separada -->
+  <script src="/js/registrar.js"></script>
+  <script>
+    // Animaciones GSAP
+    gsap.from(".login-container", { duration: 1, y: 60, opacity: 0, ease: "power3.out" });
+    gsap.from(".ola", { duration: 3, opacity: 0, stagger: 0.5, y: 100, ease: "power2.out" });
+  </script>
+</body>
+</html>

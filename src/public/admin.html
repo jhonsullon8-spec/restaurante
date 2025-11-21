@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administrador | El Mérito</title>
+  <link rel="stylesheet" href="/estiloadmincliente/admin.css">
+</head>
+
+<body>
+  <div class="admin-layout">
+    <aside class="sidebar">
+      <h2>📂 Categorías</h2>
+      <ul>
+        <li><a href="/admin/menu/Entrada">Entradas</a></li>
+        <li><a href="/admin/menu/Plato%20Principal">Platos principales</a></li>
+        <li><a href="/admin/menu/Postre">Postres</a></li>
+        <li><a href="/admin/menu/Bebida">Bebidas</a></li>
+
+      </ul>
+    </aside>
+
+    <main class="contenido">
+      <button id="btn-volver" class="btn-volver">⬅ Volver al inicio</button>
+
+      <section id="platos-section">
+        <h1>📋 Lista de Platos</h1>
+        <section class="ctn">
+          <button class="btn-nuevo" onclick="nuevoPlato()">➕ Nuevo Plato</button>
+        </section>
+        <div id="platos-container"></div>
+      </section>
+
+      <section id="form-section" class="hidden">
+        <h1 id="form-title">✏️ Editar / Agregar Plato</h1>
+
+        <form id="form-plato" enctype="multipart/form-data">
+          <input type="hidden" id="id" name="id">
+
+          <input type="text" id="nombre" name="nombre" placeholder="📝 Nombre del plato" required>
+
+          <textarea id="descripcion" name="descripcion" placeholder="📄 Descripción del plato" required></textarea>
+
+          <input type="number" step="0.01" id="precio" name="precio" placeholder="💰 Precio (S/.)" required>
+
+          <select id="categoria" name="categoria" required>
+            <option value="">📂 Seleccione categoría</option>
+            <option value="Entrada">Entrada</option>
+            <option value="Plato Principal">Plato Principal</option>
+            <option value="Postre">Postre</option>
+            <option value="Bebida">Bebida</option>
+          </select>
+
+          <input type="file" id="imagen" name="imagen" accept="image/*" placeholder="🖼️ Seleccione imagen">
+
+          <div class="form-button-group">
+            <button type="submit">💾 Guardar Plato</button>
+            <button type="button" onclick="volverLista()">⬅ Volver</button>
+          </div>
+        </form>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- 👇 Separa toda la lógica JS -->
+  <script src="/js/platosAdmin.js"></script>
+  <script src="/js/admin.js"></script>
+ 
+
+</body>
+
+</html>

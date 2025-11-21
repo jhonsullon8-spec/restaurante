@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Iniciar Sesión - El Mérito</title>
+
+  <!-- 🎨 Estilos -->
+  <link rel="stylesheet" href="/estiloadmincliente/login.css">
+
+  <!-- ✍️ Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Kaushan+Script&display=swap" rel="stylesheet">
+
+  <!-- 🌊 Librería GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+
+<body>
+  <!-- 🌊 Fondo decorativo -->
+  <div class="fondo">
+    <div class="ola ola1"></div>
+    <div class="ola ola2"></div>
+    <div class="ola ola3"></div>
+  </div>
+
+  <!-- 🔐 Formulario de inicio de sesión -->
+  <div class="login-container">
+    <h2> EL MeRitoo</h2>
+    <p class="subtitulo">Inicia sesión aquí</p>
+
+    <form id="form-login">
+      <input type="text" id="usuario" placeholder="Usuario" required>
+      <input type="password" id="password" placeholder="Contraseña" required>
+      <button type="submit">Ingresar</button>
+    </form>
+
+    <p id="msg"></p>
+    <a href="/login/registrar" class="btn-volver-inicio">¿No tienes cuenta? Crear cuenta →</a>
+    <a href="/" class="btn-volver-inicio">← Volver al Inicio</a>
+  </div>
+
+  <!-- 🚀 Lógica JS separada -->
+  <script src="/js/login.js"></script>
+</body>
+</html>

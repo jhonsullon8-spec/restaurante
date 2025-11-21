@@ -1,0 +1,19 @@
+@tailwind components;
+
+/* Botones */
+.btn-primary {
+  @apply inline-block px-6 py-2 md:px-8 md:py-3 rounded-full font-semibold text-white bg-restaurant-brown transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+}
+
+.btn-secondary {
+  @apply inline-block px-6 py-2 md:px-8 md:py-3 rounded-full font-semibold border-2 border-restaurant-brown text-restaurant-brown transition-all duration-300 hover:bg-restaurant-brown hover:text-white;
+}
+
+/* Títulos y contenedores */
+.section-title {
+  @apply font-playfair text-3xl sm:text-4xl md:text-5xl font-bold text-restaurant-brown;
+}
+
+.container-responsive {
+  @apply w-[95%] max-w-[1200px] mx-auto;
+}

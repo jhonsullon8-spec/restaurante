@@ -1,0 +1,89 @@
+/* ========================================
+   FONDO SUAVE
+======================================== */
+.fondo-plato {
+  background: linear-gradient(135deg, #f2f2f7, #e6e6ef);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* ========================================
+   TARJETA CENTRADA
+======================================== */
+.tarjeta-contenedor {
+  width: 100%;
+  max-width: 450px;
+}
+
+.tarjeta-plato {
+  background: #fff;
+  padding: 25px;
+  border-radius: 22px;
+  text-align: center;
+  box-shadow: 0px 10px 35px rgba(0, 0, 0, 0.12);
+  animation: fadeIn 0.4s ease;
+}
+
+/* ========================================
+   IMAGEN DEL PLATO
+======================================== */
+.tarjeta-imagen {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 18px;
+  margin-bottom: 20px;
+}
+
+/* ========================================
+   TEXTO DEL PLATO
+======================================== */
+.tarjeta-nombre {
+  font-size: 1.9rem;
+  color: #1a1a2e;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.tarjeta-precio {
+  font-size: 1.6rem;
+  color: #d4af37;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.tarjeta-descripcion {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+
+/* ========================================
+   BOTÓN VOLVER
+======================================== */
+.boton-volver {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #1a1a2e;
+  color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.boton-volver:hover {
+  background: #c1272d;
+}
+
+/* ========================================
+   ANIMACIÓN
+======================================== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

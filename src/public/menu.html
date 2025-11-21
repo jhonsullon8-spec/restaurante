@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cliente | El Mérito</title>
+  <link rel="stylesheet" href="/estiloadmincliente/admin.css">
+</head>
+
+<body>
+  <div class="admin-layout">
+    <!-- 📂 Sidebar Categorías -->
+    <aside class="sidebar">
+      <h2>📂 Categorías</h2>
+      <ul>
+        <li><a href="/menu/categorias/Entrada">Entradas</a></li>
+        <li><a href="/menu/categorias/Plato%20Principal">Platos principales</a></li>
+        <li><a href="/menu/categorias/Postre">Postres</a></li>
+        <li><a href="/menu/categorias/Bebida">Bebidas</a></li>
+      </ul>
+    </aside>
+
+    <!-- 📋 Contenido dinámico -->
+    <main class="contenido">
+      <h1 class="titulo-principal">EL MÉRITO RESTAURANT–CEVICHERÍA</h1>
+
+      <!-- 🔙 Botón Volver al inicio -->
+      <button id="btn-volver" class="btn-volver">⬅ Volver al inicio</button>
+
+      <!-- 📋 Sección de platos -->
+      <section id="platos-section">
+        <div class="res_nombre">
+          <h1>📋 Lista de Platos</h1>
+        </div>
+        <div id="platos-container"></div>
+      </section>
+    </main>
+  </div>
+
+  <!-- 📜 Script separado -->
+  <script src="/js/menu.js"></script>
+</body>
+
+</html>

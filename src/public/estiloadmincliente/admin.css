@@ -1,0 +1,636 @@
+/* 🎨 Paleta de colores */
+:root {
+  --primario: #d4af37;
+  --secundario: #c1272d;
+  --primary-dark: #1a1a2e;
+  --fondo: #fafafa;
+  --texto: #333;
+  --gris: #f2f2f2;
+  --sombra: rgba(0, 0, 0, 0.1);
+}
+
+/* 🔹 Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+}
+
+/* 📦 Layout principal */
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* 📂 Sidebar */
+.sidebar {
+  width: 250px;
+  background: var(--primary-dark);
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 2px 0 8px var(--sombra);
+  transition: all 0.3s ease;
+}
+
+.sidebar h2 {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  border-radius: 8px;
+  display: block;
+  text-align: center;
+  transition: background 0.3s;
+}
+
+.sidebar a:hover {
+  background: var(--primario);
+  color: var(--primary-dark);
+  font-weight: bold;
+}
+
+/* 📋 Contenido */
+.contenido {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+/* 🔙 Botón Volver */
+.btn-volver {
+  display: inline-block;
+  background: var(--secundario);
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn-volver:hover {
+  background: #a01e24;
+}
+
+/* 🧾 Sección de platos */
+#platos-section h1 {
+  font-size: 1.8rem;
+  margin: 20px 0;
+}
+
+.ctn {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-nuevo {
+  background: var(--primario);
+  border: none;
+  color: var(--primary-dark);
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn-nuevo:hover {
+  background: #c49c2f;
+}
+
+/* 🍽️ TARJETAS PREMIUM */
+#platos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  padding: 20px 0;
+}
+
+.plato-card {
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  position: relative;
+}
+
+.plato-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* 🖼️ Contenedor de imagen */
+.plato-imagen-contenedor {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f5f5f5 0%, #eeeeee 100%);
+}
+
+.plato-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+}
+
+.plato-card:hover .plato-img {
+  transform: scale(1.08);
+}
+
+/* 🏷️ Badge de categoría */
+.plato-categoria-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: linear-gradient(135deg, var(--primario), #c49c2f);
+  color: var(--primary-dark);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(212, 175, 55, 0.5);
+}
+
+/* 📄 Contenido */
+.plato-contenido {
+  padding: 22px 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.plato-nombre {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 10px;
+  line-height: 1.3;
+  letter-spacing: -0.3px;
+}
+
+.plato-desc {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 0;
+  flex-grow: 1;
+}
+
+/* 💰 Footer con precio y botón */
+.plato-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  gap: 12px;
+}
+
+.plato-precio-contenedor {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.plato-precio-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #999;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.plato-precio {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--secundario);
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+/* 🔗 Botón Ver Plato */
+.btn-ver-plato {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--secundario), #9d1f24);
+  color: white;
+  text-decoration: none;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid var(--secundario);
+  white-space: nowrap;
+}
+
+.btn-ver-plato:hover {
+  background: linear-gradient(135deg, #9d1f24, #7a181a);
+  border-color: #7a181a;
+  transform: translateX(2px);
+  box-shadow: 0 8px 20px rgba(193, 39, 45, 0.3);
+}
+
+.btn-ver-plato i {
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
+}
+
+.btn-ver-plato:hover i {
+  transform: translateX(3px);
+}
+
+/* Acciones más modernas */
+.acciones {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  display: flex;
+  gap: 12px;
+}
+
+.acciones button {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  border: none;
+  font-size: 0.9rem;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Editar */
+.acciones button:first-child {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(196, 156, 47, 0.15));
+  color: var(--primary-dark);
+  border: 1.5px solid var(--primario);
+}
+
+.acciones button:first-child:hover {
+  background: linear-gradient(135deg, var(--primario), #c49c2f);
+  color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(212, 175, 55, 0.25);
+}
+
+/* Eliminar */
+.acciones button:last-child {
+  background: linear-gradient(135deg, rgba(193, 39, 45, 0.15), rgba(157, 31, 36, 0.15));
+  color: var(--secundario);
+  border: 1.5px solid var(--secundario);
+}
+
+.acciones button:last-child:hover {
+  background: linear-gradient(135deg, var(--secundario), #9d1f24);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(193, 39, 45, 0.25);
+}
+
+/* 📝 FORMULARIO PREMIUM */
+#form-section {
+  background: linear-gradient(135deg, white 0%, #fafaf8 100%);
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+  margin: 40px auto;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  animation: slideInUp 0.4s ease;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#form-section h1 {
+  text-align: center;
+  margin-bottom: 32px;
+  color: var(--primario);
+  font-size: 1.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+#form-plato {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* Campos de entrada */
+#form-plato input,
+#form-plato textarea,
+#form-plato select {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 2px solid #e0e0e0;
+  font-size: 1rem;
+  font-family: inherit;
+  background: white;
+  color: #333;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+}
+
+#form-plato input::placeholder,
+#form-plato textarea::placeholder {
+  color: #999;
+  font-weight: 500;
+}
+
+#form-plato input:focus,
+#form-plato textarea:focus,
+#form-plato select:focus {
+  border-color: var(--primario);
+  background: #fafaf8;
+  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1);
+}
+
+#form-plato textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+/* Grupo de botones */
+.form-button-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+#form-plato button {
+  padding: 14px 24px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Botón Submit */
+#form-plato button[type="submit"] {
+  background: linear-gradient(135deg, var(--primario), #c49c2f);
+  color: var(--primary-dark);
+  grid-column: 1;
+}
+
+#form-plato button[type="submit"]:hover {
+  background: linear-gradient(135deg, #c49c2f, #a07f23);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+}
+
+#form-plato button[type="submit"]:active {
+  transform: translateY(0);
+}
+
+/* Botón Volver */
+#form-plato button[type="button"] {
+  background: linear-gradient(135deg, #f0f0f0, #e8e8e8);
+  color: #666;
+  border: 1.5px solid #ddd;
+  grid-column: 2;
+}
+
+#form-plato button[type="button"]:hover {
+  background: linear-gradient(135deg, #e8e8e8, #ddd);
+  color: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* 🔒 Ocultar */
+.hidden {
+  display: none;
+}
+
+/* 📱 Responsividad */
+@media (max-width: 1024px) {
+  .admin-layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    justify-content: space-around;
+  }
+
+  .sidebar ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .sidebar a {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  #platos-container {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contenido {
+    padding: 20px;
+  }
+
+  #platos-container {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+  }
+
+  .plato-card {
+    border-radius: 18px;
+  }
+
+  .plato-imagen-contenedor {
+    height: 160px;
+  }
+
+  .plato-contenido {
+    padding: 16px;
+  }
+
+  .plato-nombre {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
+
+  .plato-desc {
+    font-size: 0.85rem;
+  }
+
+  .plato-footer {
+    margin-top: 12px;
+    padding-top: 12px;
+    gap: 8px;
+  }
+
+  .plato-precio {
+    font-size: 1.3rem;
+  }
+
+  .btn-ver-plato {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+  }
+
+  .btn-volver,
+  .btn-nuevo {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar h2 {
+    font-size: 1rem;
+  }
+
+  .sidebar {
+    flex-wrap: wrap;
+    padding: 10px;
+  }
+
+  #platos-container {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .plato-imagen-contenedor {
+    height: 180px;
+  }
+
+  .plato-contenido {
+    padding: 16px;
+  }
+
+  .plato-nombre {
+    font-size: 1.15rem;
+  }
+
+  .plato-desc {
+    font-size: 0.85rem;
+  }
+
+  .plato-categoria-badge {
+    font-size: 0.7rem;
+    padding: 5px 12px;
+  }
+
+  .plato-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .plato-precio-contenedor {
+    margin-bottom: 8px;
+  }
+
+  .btn-ver-plato {
+    width: 100%;
+    justify-content: center;
+    padding: 12px;
+  }
+
+  #form-section {
+    padding: 24px;
+    margin: 20px auto;
+  }
+
+  #form-section h1 {
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+  }
+
+  #form-plato {
+    gap: 16px;
+  }
+
+  #form-plato input,
+  #form-plato textarea,
+  #form-plato select {
+    font-size: 0.9rem;
+    padding: 12px 14px;
+  }
+
+  .form-button-group {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  #form-plato button {
+    padding: 12px 16px;
+    font-size: 0.9rem;
+  }
+
+  #form-plato button[type="submit"],
+  #form-plato button[type="button"] {
+    grid-column: auto;
+  }
+}
